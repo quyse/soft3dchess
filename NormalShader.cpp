@@ -59,3 +59,8 @@ NormalShader::PixelOutput NormalShader::ProcessPixel(const PixelInput& input)
 		diffuse * shaderParameters->materialDiffuseCoef +
 		specular * shaderParameters->materialSpecularCoef));*/
 }
+
+NormalShader::PixelOutput NormalShader::ProcessPixel(const PixelInput& input, const PixelOutput& inputPixel)
+{
+	return PixelOutput();
+}

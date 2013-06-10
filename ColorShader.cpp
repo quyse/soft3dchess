@@ -18,6 +18,11 @@ ColorShader::VertexOutput ColorShader::ProcessVertex(const VertexInput& input)
 	return output;
 }
 
+ColorShader::PixelOutput ColorShader::ProcessPixel(const PixelInput& input)
+{
+	return PixelOutput();
+}
+
 ColorShader::PixelOutput ColorShader::ProcessPixel(const PixelInput& input, const PixelOutput& inputPixel)
 {
 	return lerp(inputPixel, shaderParameters->diffuseColor, std::max(1.0f - fabs(0.625f - length(input.sourcePosition)) * 1.6f, 0.0f));

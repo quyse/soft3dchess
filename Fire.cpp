@@ -47,6 +47,8 @@ struct FireShader
 		return output;
 	}
 
+	PixelOutput ProcessPixel(const PixelInput& input) { return vector<3>(); }
+
 	PixelOutput ProcessPixel(const PixelInput& input, const PixelOutput& inputPixel)
 	{
 		return lerp(inputPixel, color, alpha * (1.0f - std::min(sqr(input.sourcePosition.x) + sqr(input.sourcePosition.y), 1.0f)));

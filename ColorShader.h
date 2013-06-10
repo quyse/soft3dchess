@@ -25,6 +25,7 @@ public:
 	ColorShader(const ShaderParameters* shaderParameters = 0);
 	void SetShaderParameters(const ShaderParameters* shaderParameters);
 	VertexOutput ProcessVertex(const VertexInput& input);
+	PixelOutput ProcessPixel(const PixelInput& input);
 	PixelOutput ProcessPixel(const PixelInput& input, const PixelOutput& inputPixel);
 };
 

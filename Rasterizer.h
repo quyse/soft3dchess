@@ -90,21 +90,12 @@ public:
 	{
 	}
 
-	template <int Q>
-	inline void OutputPixel(const Vertex& vertex, int x, int y)
+	inline void OutputPixel(int blending, const Vertex& vertex, int x, int y)
 	{
-	}
-
-	template <>
-	inline void OutputPixel<0>(const Vertex& vertex, int x, int y)
-	{
-		outputDevice.SetPixel(x, y, pixelShader.ProcessPixel(vertex));
-	}
-
-	template <>
-	inline void OutputPixel<1>(const Vertex& vertex, int x, int y)
-	{
-		outputDevice.SetPixel(x, y, pixelShader.ProcessPixel(vertex, outputDevice.GetPixel(x, y)));
+		if(blending)
+			outputDevice.SetPixel(x, y, pixelShader.ProcessPixel(vertex, outputDevice.GetPixel(x, y)));
+		else
+			outputDevice.SetPixel(x, y, pixelShader.ProcessPixel(vertex));
 	}
 
 	//растеризовать треугольники
@@ -187,7 +178,7 @@ public:
 					//выполнить тест глубины
 					if(outputDevice.DepthTest(x, y, vertex.position.z, PixelShader::DepthWriteEnabled))
 						//выполнить пиксельный шейдер
-						OutputPixel<PixelShader::BlendingEnabled>(vertex, x, y);
+						OutputPixel(PixelShader::BlendingEnabled, vertex, x, y);
 				}
 			}
 		}
