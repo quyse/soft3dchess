@@ -1,0 +1,38 @@
+Информация о производительности различных версий (FPS)
+Рисуется вращающийся конь в окошке 512x512
+Все естественно в Release конфигурации
+
+== Компилятор Microsoft
+=== одно ядро
+==== typedef float scalar: 15.410
+==== typedef double scalar: 22.852
+==== typedef long double scalar: 22.852
+=== два ядра
+==== typedef float scalar: 24.281
+==== typedef double scalar: 32.787
+==== typedef long double scalar: 33.047
+== Компилятор Intel
+=== одно ядро
+==== typedef float scalar: 32.787
+==== typedef double scalar: 27.454
+==== typedef long double scalar: 27.334
+=== два ядра
+==== typedef float scalar: 45.620
+==== typedef double scalar: 38.964
+==== typedef long double scalar: 39.085
+
+
+
+Оптимизации:
+шаблоны
+back-face culling
+early z-culling (?)
+многоядерность
+правильное распараллеливание
+банансировка нагрузки
+использование Intel C++ Compiler
+	использование SSE2
+	векторизация кода
+	использование float
+32-битный цветовой буфер
+Z-буфер формата float
