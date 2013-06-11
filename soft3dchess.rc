@@ -1,51 +1,8 @@
 // Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
-
-#define APSTUDIO_READONLY_SYMBOLS
-/////////////////////////////////////////////////////////////////////////////
-//
-// Generated from the TEXTINCLUDE 2 resource.
-//
-#include "winres.h"
-
-/////////////////////////////////////////////////////////////////////////////
-#undef APSTUDIO_READONLY_SYMBOLS
-
-/////////////////////////////////////////////////////////////////////////////
-// Russian resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
-#ifdef _WIN32
-LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
-#pragma code_page(1251)
-#endif //_WIN32
-
-#ifdef APSTUDIO_INVOKED
-/////////////////////////////////////////////////////////////////////////////
-//
-// TEXTINCLUDE
-//
-
-1 TEXTINCLUDE 
-BEGIN
-    "resource.h\0"
-END
-
-2 TEXTINCLUDE 
-BEGIN
-    "#include ""afxres.h""\r\n"
-    "\0"
-END
-
-3 TEXTINCLUDE 
-BEGIN
-    "\r\n"
-    "\0"
-END
-
-#endif    // APSTUDIO_INVOKED
-
+#include <winres.h>
+#include <commctrl.h>
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -54,36 +11,36 @@ END
 
 IDD_DIALOG_CONNECT DIALOGEX 0, 0, 188, 64
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Подключение к серверу"
+CAPTION "Connect to Server"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    LTEXT           "Имя или IP-адрес сервера:",IDC_STATIC,7,7,95,11
+    LTEXT           "Server's name or IP:",IDC_STATIC,7,7,95,11
     EDITTEXT        IDC_EDIT_SERVER,7,21,174,14,ES_AUTOHSCROLL
     DEFPUSHBUTTON   "OK",IDOK,77,43,50,14
-    PUSHBUTTON      "Отмена",IDCANCEL,131,43,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,131,43,50,14
 END
 
 IDD_DIALOG_CREATE_SERVER DIALOGEX 0, 0, 156, 82
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Создание сервера"
+CAPTION "Create Server"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,43,61,50,14
-    PUSHBUTTON      "Отмена",IDCANCEL,99,61,50,14
-    LTEXT           "Какими фигурами будете играть вы?",IDC_STATIC,7,7,142,13
-    CONTROL         "Белыми",IDC_RADIO_WHITE,"Button",BS_AUTORADIOBUTTON,7,24,92,11
-    CONTROL         "Черными",IDC_RADIO_BLACK,"Button",BS_AUTORADIOBUTTON,7,40,92,11
+    PUSHBUTTON      "Cancel",IDCANCEL,99,61,50,14
+    LTEXT           "What is your color?",IDC_STATIC,7,7,142,13
+    CONTROL         "White",IDC_RADIO_WHITE,"Button",BS_AUTORADIOBUTTON,7,24,92,11
+    CONTROL         "Black",IDC_RADIO_BLACK,"Button",BS_AUTORADIOBUTTON,7,40,92,11
 END
 
 IDD_DIALOG_PROMOTION DIALOGEX 0, 0, 139, 127
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Прохождение пешки"
+CAPTION "Promotion"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    LTEXT           "Выберите фигуру:",IDC_STATIC,7,7,102,13
+    LTEXT           "Choose a piece:",IDC_STATIC,7,7,102,13
     LISTBOX         IDC_LIST_FIGURES,7,22,125,78,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
     DEFPUSHBUTTON   "OK",IDOK,28,106,50,14,WS_DISABLED
-    PUSHBUTTON      "Отмена",IDCANCEL,82,106,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,82,106,50,14
 END
 
 
@@ -129,16 +86,16 @@ END
 
 IDR_MENU_MAIN MENU 
 BEGIN
-    POPUP "Игра"
+    POPUP "Play"
     BEGIN
-        MENUITEM "Создать сервер...",           MID_CREATE_SERVER
-        MENUITEM "Подключиться к игре...",      MID_CONNECT_GAME
-        MENUITEM "Игра с самим собой",          MID_BEGIN_GAME_SELF
-        MENUITEM "Выход",                       MID_EXIT
+        MENUITEM "Create Server...",           MID_CREATE_SERVER
+        MENUITEM "Connect to Server...",      MID_CONNECT_GAME
+        MENUITEM "Play with yourself",          MID_BEGIN_GAME_SELF
+        MENUITEM "Exit",                       MID_EXIT
     END
-    POPUP "Справка"
+    POPUP "Help"
     BEGIN
-        MENUITEM "О программе...",              MID_ABOUT
+        MENUITEM "About...",              MID_ABOUT
     END
 END
 
@@ -150,43 +107,28 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_MAIN_TITLE          "3D-шахматы"
-    IDS_TITLE_DUAL_CORE     "3D-шахматы (Dual Core, FPS = %.3lf)"
-    IDS_TITLE_SINGLE_CORE   "3D-шахматы (Single Core, FPS = %.3lf)"
-    IDS_TITLE_QUAD_CORE     "3D-шахматы (Quad Core, FPS = %.3lf)"
-    IDS_TITLE_MULTI_CORE    "3D-шахматы (Multi Core, FPS = %.3lf)"
-    IDS_ACCEPT_SUCCEEDED    "Клиент подключен."
-    IDS_ACCEPT_FAILED       "Не удалось подключить клиента."
-    IDS_CONNECT_SUCCEEDED   "Мы подключились к серверу."
-    IDS_CONNECT_FAILED      "Не удалось подключиться к серверу."
-    IDS_GAME_BEGINS         "Игра начинается :)"
-    IDS_ERROR               "Ошибка :("
+    IDS_MAIN_TITLE          "Soft 3D Chess"
+    IDS_TITLE_DUAL_CORE     "Soft 3D Chess (Dual Core, FPS = %.3lf)"
+    IDS_TITLE_SINGLE_CORE   "Soft 3D Chess (Single Core, FPS = %.3lf)"
+    IDS_TITLE_QUAD_CORE     "Soft 3D Chess (Quad Core, FPS = %.3lf)"
+    IDS_TITLE_MULTI_CORE    "Soft 3D Chess (Multi Core, FPS = %.3lf)"
+    IDS_ACCEPT_SUCCEEDED    "Player accepted."
+    IDS_ACCEPT_FAILED       "Player accept failed."
+    IDS_CONNECT_SUCCEEDED   "We are connected."
+    IDS_CONNECT_FAILED      "Connect failed."
+    IDS_GAME_BEGINS         "The game begins :)"
+    IDS_ERROR               "Error :("
 END
 
 STRINGTABLE 
 BEGIN
-    IDS_CHECKMATE_FOR_ME    "Вы проиграли! Вам поставлен мат."
-    IDS_CHECKMATE_FOR_HIM   "Вы выиграли! Вы поставили мат."
-    IDS_STALEMATE           "Ничья! Результат игры - пат."
-    IDS_GAME_OVER           "Игра закончена"
-    IDS_ABOUT               "Сетевые 3D-шахматы\n       Курсовая по компьютерной графике\n\nВыполнили:\n       Александр Бич\n       Кирилл Нестеров\n       группа ММ-412"
-    IDS_ABOUT_TITLE         "О программе"
-    IDS_PROMOTION_FIGURES   "Ферзь\tКонь\tЛадья\tСлон"
-    IDS_DRAW                "Ничья! Остались только короли."
+    IDS_CHECKMATE_FOR_ME    "You lost! You're checkmated."
+    IDS_CHECKMATE_FOR_HIM   "You won! You forced a checkmate."
+    IDS_STALEMATE           "Draw! Stalemate."
+    IDS_GAME_OVER           "Game is over"
+    IDS_ABOUT               "Soft 3D Chess\n       Graphics Coursework\n\nAuthor:\n       Alexander Bich"
+    IDS_ABOUT_TITLE         "About"
+    IDS_PROMOTION_FIGURES   "Queen\tKnight\tRook\tBishop"
+    IDS_DRAW                "Draw! There are only kings."
 END
-
-#endif    // Russian resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-
-#ifndef APSTUDIO_INVOKED
-/////////////////////////////////////////////////////////////////////////////
-//
-// Generated from the TEXTINCLUDE 3 resource.
-//
-
-
-/////////////////////////////////////////////////////////////////////////////
-#endif    // not APSTUDIO_INVOKED
 
