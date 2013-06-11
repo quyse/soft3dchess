@@ -167,4 +167,7 @@
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="soft3dchess.manifest" />
+  </ItemGroup>
 </Project>

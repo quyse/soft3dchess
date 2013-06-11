@@ -138,6 +138,9 @@
   <ItemGroup>
     <ResourceCompile Include="soft3dchess.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="soft3dchess.manifest" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
